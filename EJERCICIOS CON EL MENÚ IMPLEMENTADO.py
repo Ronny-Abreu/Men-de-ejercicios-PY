@@ -240,6 +240,181 @@ while True:
 #Fin ejercicios de Ronny
 
 #Ejercicios de Ricardo
+#Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
+#una con valores negativos y otra con los valores positivos e imprimir ambas listas.
+
+def negativos_positivos(valores):
+    negativos = []
+    positivos = []
+        
+    for valor in valores:
+        if valor < 0:
+            negativos.append(valor)
+        elif valor > 0:
+            positivos.append(valor)
+        
+    return negativos, positivos
+
+valores = [-3, 7, 0, 2, -1, 5, -4]  
+
+# Separar y obtener las listas
+negativos, positivos = negativos_positivos(valores)
+print("Lista de valores negativos:", negativos)
+print("Lista de valores positivos:", positivos)
+
+#para llamar al menu y elegir la opcion:
+if opcion == 16:
+    negativos_positivos()
+
+#---------------------------------------------------------------------------------------------
+
+#Realizar un programa que reciba una serie de edades y retorne la cantidad de
+#personas con una edad igual o superior a 18 (como mínimo deben introducirse 3
+#valores enteros)
+
+def adultos(edades):
+    contador = 0
+    for edad in edades:
+        if edad >= 18:
+            contador += 1
+    return contador
+
+# Solicitar al usuario que ingrese al menos 3 edades mayores a cero
+edades = []
+while len(edades) < 3:
+    try:
+        edad = int(input(f"Ingrese la edad {len(edades) + 1} (mayor a 0): "))
+        if edad > 0:
+            edades.append(edad)
+        else:
+            print("La edad debe ser mayor a 0.")
+    except ValueError:
+        print("Por favor, ingrese un número entero válido.")
+
+print(f"La cantidad de personas con edad igual o superior a 18 es: {adultos(edades)}")
+
+#para llamar al menu y elegir la opcion:
+if opcion == 17:
+    adultos()
+
+#-----------------------------------------------------------------------------------------------
+#Solicitar la carga por teclado de un string. Mostrar el total de caracteres del string y
+#utilizar las funciones explicadas anteriormente (upper, lower y capitalize).
+
+def obtener_total_caracteres(texto):
+    return len(texto)
+
+def convertir_mayusculas(texto):
+    return texto.upper()
+
+def convertir_minusculas(texto):
+    return texto.lower()
+
+def capitalizar_texto(texto):
+    return texto.capitalize()
+
+def procesar_texto():
+    # Solicita la entrada de un string por teclado
+    texto = input("Introduce un texto: ").strip()
+    
+    # Verifica si el texto está vacío
+    if not texto:
+        print("El texto ingresado está vacío. Inténtalo de nuevo.")
+        return
+    
+    # Llama a las funciones y muestra los resultados
+    print(f"Total de caracteres: {obtener_total_caracteres(texto)}")
+    print(f"Texto en mayúsculas: {convertir_mayusculas(texto)}")
+    print(f"Texto en minúsculas: {convertir_minusculas(texto)}")
+    print(f"Texto capitalizado: {capitalizar_texto(texto)}")
+
+# Ejecuta la función principal
+procesar_texto()
+
+#para llamar al menu y elegir la opcion:
+if opcion == 18:
+    obtener_total_caracteres()
+    convertir_mayusculas()
+    convertir_minusculas()
+    capitalizar_texto()
+    procesar_texto()
+#-----------------------------------------------------------------------------------------------
+
+"""
+Crear un módulo para validación de nombres de usuarios. Dicho módulo, deberá
+cumplir con los siguientes criterios de aceptación:
+El nombre de usuario debe contener un mínimo de 6 caracteres y un máximo de 12.
+El nombre de usuario debe ser alfanumérico.
+Nombre de usuario con menos de 6 caracteres, retorna el mensaje "El
+nombre de usuario debe contener al menos 6 caracteres".
+Nombre de usuario con más de 12 caracteres, retorna el mensaje "El nombre
+de usuario no puede contener más de 12 caracteres".
+Nombre de usuario con caracteres distintos a los alfanuméricos, retorna el
+mensaje "El nombre de usuario puede contener solo letras y números".
+Nombre de usuario válido, retorna True.
+"""
+
+def validar_usuario(nombre_usuario):
+    # Verificar la longitud del nombre de usuario
+    if len(nombre_usuario) < 6:
+        return "El nombre de usuario debe contener al menos 6 caracteres."
+    elif len(nombre_usuario) > 12:
+        return "El nombre de usuario no puede contener más de 12 caracteres."
+    
+    # Verificar si el nombre de usuario es alfanumérico
+    if not nombre_usuario.isalnum():
+        return "El nombre de usuario puede contener solo letras y números."
+    
+    # Si todas las validaciones pasan
+    return True
+
+
+# Bucle para pedir un nombre de usuario hasta que sea válido
+while True:
+    nombre = input("Introduce un nombre de usuario: ")
+    resultado = validar_usuario(nombre)
+
+    if resultado is True:
+        print("Nombre de usuario válido.")
+        break  # Salir del bucle si el nombre es válido
+    else:
+        print(resultado)  # Imprimir el mensaje de error
+        
+#para llamar al menu y elegir la opcion:
+if opcion == 19:
+    validar_usuario()
+#-----------------------------------------------------------------
+
+#Escribe un programa que almacene un número y pida al usuario
+#adivinarlo.
+import random
+
+def adivinar_numero():
+    numero_secreto = random.randint(1, 50)
+    intentos = 0
+    
+    print("He elegido un número entre 1 y 50. ¡Intenta adivinarlo!")
+    
+    while True:
+        try:
+            intento = int(input("Introduce tu número: "))
+            intentos += 1
+            
+            if intento < numero_secreto:
+                print("Demasiado bajo. Intenta de nuevo.")
+            elif intento > numero_secreto:
+                print("Demasiado alto. Intenta de nuevo.")
+            else:
+                print(f"¡Felicidades! Adivinaste el número {numero_secreto} en {intentos} intentos.")
+                break
+        except ValueError:
+            print("Por favor, introduce un número válido.")
+            
+#para llamar al menu y elegir la opcion:
+if opcion == 20:
+    adivinar_numero()
+#-----------------------------------------------------------------
+
 # Fin ejercicios de Ricardo
 
     #Poner sus los bloques de codigo de sus programas encima de el siguiente bloque de codigo:
