@@ -126,6 +126,7 @@ while True:
         print(f'El total de empleados que ganan menos de 500 son: {meno}')
         print(f'El sueldo total que gasta la empresa es de: {total_sueldos}')
 
+    
     if opcion == 8:
             sueldo_empleados()
 
@@ -171,6 +172,7 @@ while True:
         print(f'\nTotal de estudiantes aprobados: {aprobados}')
         print(f'Total de estudiantes reprobados: {reprobados}')
 
+    
     if opcion == 9:
             aprobado_suspendido_alumno()
 
@@ -191,9 +193,10 @@ while True:
 
         print(f'La suma de los últimos 5 valores ingresados es: {suma_ultimos_5}')
 
+    
     if opcion == 10:
             suma_numeros()
-        
+
         # Fin ejercicios de Jhael
         
         #Ejercicios de Ronny:
@@ -217,7 +220,7 @@ while True:
         
     """Esto es lo que hay que hacer para poder llamar al menú y elegir una opcion."""
         ##Llamar a la funcion si elige su opcion
-    opcion = menu()     #pregunta "porqué si no instancio la funcion se imprime dos veces el menú, ejemplo si hago if menu() == 11: tabla_multiplicar()
+    #pregunta "porqué si no instancio la funcion se imprime dos veces el menú, ejemplo si hago if menu() == 11: tabla_multiplicar()
     if opcion == 11:
         tabla_multiplicar()
 
