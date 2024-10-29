@@ -40,16 +40,98 @@ def menu():
     print("")
     return choice
 
-#Ejercicios de Jheinel:
-# Fin ejercicios de Jheinel
-
-#Ejercicios de jhael:
-
 #Bucle while para mostrar el menú hasta que se ingrese 0 "Para salir", por teclado.
 while True:
+    
+    #Ejercicios de Jheinel:
+
+    def ejercicio_persona():
+        print("\n--- Ejercicio Persona ---")
+        print("")
+
+        # Define la clase Persona con sus atributos y métodos
+        class Persona:
+            def __init__(self, nombre, apellido, edad, estadoCivil, numeroDocumentoIdentidad):
+                self.nombre = nombre
+                self.apellido = apellido
+                self.edad = edad
+                self.estadoCivil = estadoCivil
+                self.numeroDocumentoIdentidad = numeroDocumentoIdentidad
+
+            # Método especial para representar el objeto como una cadena de texto   
+            def __str__(self):
+                estado_civil = "Casado" if self.estadoCivil else "Soltero"
+                return (f"Persona: {self.nombre} {self.apellido}, "
+                        f"Edad: {self.edad}, Estado Civil: {estado_civil}, "
+                        f"ID: {self.numeroDocumentoIdentidad}")
+
+            def obtener_nombre(self):
+                return self.nombre
+
+            def establecer_nombre(self, nombre):
+                self.nombre = nombre
+
+            def obtener_apellido(self):
+                return self.apellido
+
+            def establecer_apellido(self, apellido):
+                self.apellido = apellido
+
+            def obtener_edad(self):
+                return self.edad
+
+            def establecer_edad(self, edad):
+                self.edad = edad
+
+            def obtener_estadoCivil(self):
+                return "Casado" if self.estadoCivil else "Soltero"
+
+            def establecer_estadoCivil(self, estadoCivil):
+                self.estadoCivil = estadoCivil
+
+            def obtener_numeroDocumentoIdentidad(self):
+                return self.numeroDocumentoIdentidad
+
+            def establecer_numeroDocumentoIdentidad(self, numeroDocumentoIdentidad):
+                self.numeroDocumentoIdentidad = numeroDocumentoIdentidad
+
+        # Pruebas con instancias de Persona
+        persona1 = Persona("Harry", "Potter", 17, False, 203471235)
+        print(persona1)
+
+        persona2 = Persona("Hermione", "Granger", 17, False, 203896545)
+        print(persona2)
+
+        persona3 = Persona("Ron", "Weasly", 0, False, 203964235)
+        persona3.establecer_edad(45)
+        print(persona3)
+
+        persona4 = Persona("Albus", "", 68, False, 203101255)
+        persona4.establecer_apellido("Dumbledore")
+        print(persona4)
+
+        persona5 = Persona("Sirius", "Black", 45, False, 203785235)
+        print(persona5)
+
+        persona6 = Persona("Draco", "Malfoy", 17, False, 0)
+        persona6.establecer_numeroDocumentoIdentidad(203366575)
+        print(persona6)
+
+        persona7 = Persona("Bellatrix", "Lestrange", 49, False, 203894225)
+        persona7.establecer_estadoCivil(True)
+        print(persona7)
+        print("")
+
+    opcion = menu()
+    if opcion == 1:
+            ejercicio_persona()
+            input("\nPresiona Enter para volver al menú...")
+            
+    # Fin ejercicios de Jheinel
 
     """------------------------- CICLO WHILE --------------------------"""
-
+    #Ejercicios de jhael:
+    
     def notas_alumnos():
         print("\n--- Notas Alumnos ---")
         print("")
@@ -569,7 +651,9 @@ while True:
 
         #Poner sus los bloques de codigo de sus programas encima de el siguiente bloque de codigo:
         """OJO DEJAR ESTO SIEMPRE AL FINAL DE EL PROGRAMA EN GENERAL"""
-        #Con esto cerramos el menú.
-        if opcion == 0:
-            print("Haz salido del programa.")
-            break
+
+
+    #Con esto cerramos el menú.
+    if opcion == 0:
+        print("Haz salido del programa.")
+        break
