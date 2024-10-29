@@ -40,6 +40,11 @@ def menu():
     print("")
     return choice
 
+#Ejercicios de Jheinel:
+# Fin ejercicios de Jheinel
+
+#Ejercicios de jhael:
+
 #Bucle while para mostrar el menú hasta que se ingrese 0 "Para salir", por teclado.
 while True:
 
@@ -192,11 +197,6 @@ while True:
     if opcion == 10:
             suma_numeros()
 
-        
-        #Ejercicios de Jheinel:
-        # Fin ejercicios de Jheinel
-        
-        #Ejercicios de jhael:
         # Fin ejercicios de Jhael
         
         #Ejercicios de Ronny:
