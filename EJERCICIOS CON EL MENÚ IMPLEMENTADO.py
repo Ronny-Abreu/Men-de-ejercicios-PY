@@ -393,28 +393,44 @@ while True:
     #Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
     #una con valores negativos y otra con los valores positivos e imprimir ambas listas.
 
-    def negativos_positivos(valores):
-        negativos = []
-        positivos = []
+    def positivos_negativos():
+    negativos = []  # Lista para números negativos
+    positivos = []  # Lista para números positivos y ceros
+
+    print("Introduce números enteros uno por uno. Escribe 'fin' para terminar.")
+    print("Ejemplo: -3, 2, 0, fin")
+
+    while True:
+        valor_input = input("Introduce un número: ")
+        
+        # Termina el bucle si el usuario escribe "fin"
+        if valor_input.lower() == "fin":
+            break
+        
+        try:
+            valor = int(valor_input.strip())  # Convertir la entrada en un entero
             
-        for valor in valores:
+            # Clasificar el número en negativo o positivo
             if valor < 0:
-                negativos.append(valor)
-            elif valor > 0:
-                positivos.append(valor)
-            
-        return negativos, positivos
+                negativos.append(valor)  # Agregar a la lista de negativos
+            else:
+                positivos.append(valor)  # Agregar a la lista de positivos y ceros
+        except ValueError:
+            # Mensaje de error si no se puede convertir a entero
+            print("Por favor, ingresa un número entero válido.")
 
-    valores = [-3, 7, 0, 2, -1, 5, -4]  
+    # Ordenar ambas listas de menor a mayor
+    negativos.sort()  # Ordenar negativos
+    positivos.sort()  # Ordenar positivos y ceros
 
-    # Separar y obtener las listas
-    negativos, positivos = negativos_positivos(valores)
-    print("Lista de valores negativos:", negativos)
-    print("Lista de valores positivos:", positivos)
+    # Presentar resultados
+    print("\nLista de números negativos ordenados de menor a mayor:")
+    print(negativos)
+    print("Lista de números positivos y ceros ordenados de menor a mayor:")
+    print(positivos)
 
-    #para llamar al menu y elegir la opcion:
-    if opcion == 16:
-        negativos_positivos()
+# Ejecutar la función
+positivos_negativos()
 
     #---------------------------------------------------------------------------------------------
 
