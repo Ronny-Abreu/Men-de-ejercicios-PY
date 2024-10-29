@@ -126,7 +126,6 @@ while True:
         print(f'El total de empleados que ganan menos de 500 son: {meno}')
         print(f'El sueldo total que gasta la empresa es de: {total_sueldos}')
 
-    opcion = menu()
     if opcion == 8:
             sueldo_empleados()
 
@@ -172,7 +171,6 @@ while True:
         print(f'\nTotal de estudiantes aprobados: {aprobados}')
         print(f'Total de estudiantes reprobados: {reprobados}')
 
-    opcion = menu()
     if opcion == 9:
             aprobado_suspendido_alumno()
 
@@ -193,10 +191,9 @@ while True:
 
         print(f'La suma de los últimos 5 valores ingresados es: {suma_ultimos_5}')
 
-    opcion = menu()
     if opcion == 10:
             suma_numeros()
-
+        
         # Fin ejercicios de Jhael
         
         #Ejercicios de Ronny:
